@@ -1,0 +1,12 @@
+services:
+  tailscale-derper:
+    container_name: tailscale-derper
+    image: tailscale-derper
+    environment:
+      - DERPER_IP=10.0.0.1
+    volumes:
+      - ./certs:/etc/derper/certs
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+      - 3478:3478/udp
